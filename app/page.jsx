@@ -1,19 +1,22 @@
-import Head from "next/head";
-// import Image from "next/image";
-// import styles from  "styles/Home.module.css";
+"use client";
+
+import { useState } from "react";
+import Navbar from "../components/Navbar";
+import Hero from "../components/Hero";
+import Services from "../components/Services";
+import Portfolio from "../components/Portfolio";
+import Footer from "../components/Footer";
 
 export default function Home() {
+  const [darkMode, setDarkMode] = useState(false);
   return (
-    <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-      <Head>
-        <title>Lyse Arlette Aneze Portfolio</title>
-        <meta name="description" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main>
-        <section className="bg-blue-700 h-screen">
-
-        </section>
+    <div className={darkMode ? "dark" : ""}>
+      <main className="bg-white dark:bg-gray-900 transition-all duration-300">
+        <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+        <Hero />
+        <Services />
+        <Portfolio />
+        <Footer />
       </main>
     </div>
   );
