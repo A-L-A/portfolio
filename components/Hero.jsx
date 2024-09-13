@@ -18,7 +18,7 @@ const Hero = () => {
           Full Stack Developer
         </h3>
         <p className="text-md py-5 leading-8 text-gray-800 md:text-xl max-w-2xl mx-auto dark:text-gray-200">
-          Specializing in robust, scalable web solutions that drive business
+          Specializing in robust web solutions that drive business
           growth and user engagement. Ready to transform your digital landscape?
           Let's connect!
         </p>
