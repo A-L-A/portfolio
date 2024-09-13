@@ -3,13 +3,14 @@ import { BsFillMoonStarsFill, BsHouseFill } from "react-icons/bs";
 
 const Navbar = ({ darkMode, setDarkMode }) => {
   useEffect(() => {
+    console.log("setDarkMode in Navbar:", setDarkMode);
     const smoothScroll = (e) => {
       e.preventDefault();
       const targetId = e.currentTarget.getAttribute("href").slice(1);
       const targetElement = document.getElementById(targetId);
       if (targetElement) {
         window.scrollTo({
-          top: targetElement.offsetTop - 100, // Adjust this value as needed
+          top: targetElement.offsetTop - 100,
           behavior: "smooth",
         });
       }
@@ -37,7 +38,10 @@ const Navbar = ({ darkMode, setDarkMode }) => {
           <ul className="flex items-center space-x-4 sm:space-x-6">
             <li>
               <BsFillMoonStarsFill
-                onClick={() => setDarkMode(!darkMode)}
+                onClick={() => {
+                  console.log("Dark mode toggled");
+                  setDarkMode(!darkMode);
+                }}
                 className="cursor-pointer text-xl text-gray-700 hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400"
               />
             </li>
@@ -58,7 +62,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
             <li>
               <a
                 className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 rounded-md hover:opacity-90 transition duration-300"
-                href="https://drive.google.com/file/d/1aPlTI27POK5Ex_UrsMZaK0PAe0oyoA1e/view?usp=sharing" 
+                href="https://drive.google.com/file/d/1aPlTI27POK5Ex_UrsMZaK0PAe0oyoA1e/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer">
                 Resume
