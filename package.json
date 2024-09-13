@@ -3,14 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://A-L-A.github.io/portfolio",
-  
+
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "deploy": "next build && touch out/.nojekyll && gh-pages -d out -t true"
   },
-
+  
   "dependencies": {
     "next": "14.2.5",
     "react": "^18",
