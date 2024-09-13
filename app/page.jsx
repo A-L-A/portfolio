@@ -7,10 +7,10 @@ import Services from "../components/Services";
 import Portfolio from "../components/Portfolio";
 import Footer from "../components/Footer";
 
-export default function Home() {
+export default function Home({ darkMode, setDarkMode }) {
   return (
-    <main>
-      <Navbar />
+    <main className={darkMode ? "dark" : ""}>
+      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
       <Hero />
       <Services />
       <Portfolio />
