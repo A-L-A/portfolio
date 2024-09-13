@@ -62,7 +62,7 @@ const Services = () => {
               Development Tools:
             </h4>
             <div className="space-y-1">
-              {["MERN", "WordPress", "Drupal"].map((tool) => (
+              {["MERN Stack", "WordPress", "Shopify"].map((tool) => (
                 <p
                   key={tool}
                   className="text-white py-1 text-sm sm:text-base bg-teal-500 rounded-full px-4 transition-all duration-300 hover:bg-teal-600 inline-block">
@@ -92,7 +92,7 @@ const Services = () => {
               Optimization Tools:
             </h4>
             <div className="space-y-1">
-              {["GitHub", "NPM", "Webpack"].map((tool) => (
+              {["LightHouse", "GT Merix", "Grafana"].map((tool) => (
                 <p
                   key={tool}
                   className="text-white py-1 text-sm sm:text-base bg-teal-500 rounded-full px-4 transition-all duration-300 hover:bg-teal-600 inline-block">
