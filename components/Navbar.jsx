@@ -1,32 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { BsFillMoonStarsFill, BsHouseFill } from "react-icons/bs";
+import { useTheme } from "../ThemeContext";
 
-const Navbar = ({ darkMode, setDarkMode }) => {
-  useEffect(() => {
-    console.log("setDarkMode in Navbar:", setDarkMode);
-    const smoothScroll = (e) => {
-      e.preventDefault();
-      const targetId = e.currentTarget.getAttribute("href").slice(1);
-      const targetElement = document.getElementById(targetId);
-      if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop - 100,
-          behavior: "smooth",
-        });
-      }
-    };
-
-    const links = document.querySelectorAll('a[href^="#"]');
-    links.forEach((link) => {
-      link.addEventListener("click", smoothScroll);
-    });
-
-    return () => {
-      links.forEach((link) => {
-        link.removeEventListener("click", smoothScroll);
-      });
-    };
-  }, []);
+const Navbar = () => {
+  const { darkMode, toggleDarkMode } = useTheme();
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white dark:bg-gray-900 shadow-md z-50 transition-all duration-300">
@@ -38,10 +15,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
           <ul className="flex items-center space-x-4 sm:space-x-6">
             <li>
               <BsFillMoonStarsFill
-                onClick={() => {
-                  console.log("Dark mode toggled");
-                  setDarkMode(!darkMode);
-                }}
+                onClick={toggleDarkMode}
                 className="cursor-pointer text-xl text-gray-700 hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400"
               />
             </li>

@@ -15,14 +15,14 @@ const Portfolio = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
           {/* Project 1 */}
           <div className="shadow-lg p-6 rounded-xl dark:bg-gray-800 hover:bg-blue-50 dark:hover:bg-blue-900 transition-all duration-300">
-            <Image
-              src={web1}
-              className="rounded-lg object-cover"
-              width={500}
-              height={300}
-              layout="responsive"
-              alt="Live Music Mapping Platform"
-            />
+            <div className="relative w-full" style={{ paddingTop: "60%" }}>
+              <Image
+                src={web1}
+                alt="Live Music Mapping Platform"
+                fill
+                className="rounded-lg object-cover"
+              />
+            </div>
             <h3 className="text-xl font-semibold mt-4 dark:text-white">
               Live Music Mapping Platform
             </h3>
@@ -41,14 +41,14 @@ const Portfolio = () => {
 
           {/* Project 2 */}
           <div className="shadow-lg p-6 rounded-xl dark:bg-gray-800 hover:bg-blue-50 dark:hover:bg-blue-900 transition-all duration-300">
-            <Image
-              src={web2}
-              className="rounded-lg object-cover"
-              width={500}
-              height={300}
-              layout="responsive"
-              alt="Restaurant Discovery Website"
-            />
+            <div className="relative w-full" style={{ paddingTop: "60%" }}>
+              <Image
+                src={web2}
+                alt="Restaurant Discovery Website"
+                fill
+                className="rounded-lg object-cover"
+              />
+            </div>
             <h3 className="text-xl font-semibold mt-4 dark:text-white">
               Restaurant Discovery Website
             </h3>
@@ -66,14 +66,14 @@ const Portfolio = () => {
 
           {/* Project 3 */}
           <div className="shadow-lg p-6 rounded-xl dark:bg-gray-800 hover:bg-blue-50 dark:hover:bg-blue-900 transition-all duration-300">
-            <Image
-              src={web3}
-              className="rounded-lg object-cover"
-              width={500}
-              height={300}
-              layout="responsive"
-              alt="Fashion Store Landing Page"
-            />
+            <div className="relative w-full" style={{ paddingTop: "60%" }}>
+              <Image
+                src={web3}
+                alt="Fashion Store Landing Page"
+                fill
+                className="rounded-lg object-cover"
+              />
+            </div>
             <h3 className="text-xl font-semibold mt-4 dark:text-white">
               Fashion Store Landing Page
             </h3>
@@ -91,14 +91,14 @@ const Portfolio = () => {
 
           {/* Project 4 */}
           <div className="shadow-lg p-6 rounded-xl dark:bg-gray-800 hover:bg-blue-50 dark:hover:bg-blue-900 transition-all duration-300">
-            <Image
-              src={web4}
-              className="rounded-lg object-cover"
-              width={500}
-              height={300}
-              layout="responsive"
-              alt="Tinder for Dogs Demo Site"
-            />
+            <div className="relative w-full" style={{ paddingTop: "60%" }}>
+              <Image
+                src={web4}
+                alt="Tinder for Dogs Demo Site"
+                fill
+                className="rounded-lg object-cover"
+              />
+            </div>
             <h3 className="text-xl font-semibold mt-4 dark:text-white">
               Tinder for Dogs Demo Site
             </h3>
