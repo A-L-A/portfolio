@@ -7,11 +7,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d out"
+    "export": "next export",
+    "deploy": "next build && touch out/.nojekyll && gh-pages -d out -t true"
   },
-
   "dependencies": {
     "next": "14.2.5",
     "react": "^18",
