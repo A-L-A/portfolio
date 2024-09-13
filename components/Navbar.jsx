@@ -55,11 +55,10 @@ const Navbar = ({ darkMode, setDarkMode }) => {
                 Portfolio
               </a>
             </li>
-
             <li>
               <a
                 className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 rounded-md hover:opacity-90 transition duration-300"
-                href="#"
+                href="https://drive.google.com/file/d/1aPlTI27POK5Ex_UrsMZaK0PAe0oyoA1e/view?usp=sharing" 
                 target="_blank"
                 rel="noopener noreferrer">
                 Resume
