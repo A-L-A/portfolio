@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export", // This ensures Next.js exports static HTML
+  output: "export", // Use "export" for static HTML export
   images: {
     unoptimized: true, // Disables Next.js image optimization for GitHub Pages
   },

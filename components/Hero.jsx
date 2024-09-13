@@ -16,11 +16,11 @@ const Hero = () => {
         setIndex((prev) => prev + 1);
       }, 100);
     } else {
-      // Wait 4 seconds, then reset the typed text to restart the effect
+      
       typingEffect = setTimeout(() => {
         setTypedText("");
         setIndex(0);
-      }, 4000);
+      }, 3000);
     }
 
     return () => {
@@ -42,9 +42,10 @@ const Hero = () => {
         </h3>
         <p className="text-md py-5 leading-8 text-gray-800 md:text-xl max-w-2xl mx-auto dark:text-gray-200">
           Specializing in robust web solutions that drive business growth and
-          user engagement. Ready to transform your digital landscape? Let's
+          user engagement. Ready to transform your digital landscape? Let&apos;s
           connect!
         </p>
+
         <div className="flex justify-center gap-4 py-6">
           <a
             href="mailto:lyseaaneze@gmail.com"
