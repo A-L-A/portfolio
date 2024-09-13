@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
- "deploy": "next build && touch out/.nojekyll && cp public/CNAME out/ && gh-pages -d out -t true"
+    "deploy": "next build && touch out/.nojekyll && cp public/CNAME out/ && gh-pages -d out -t true"
   },
   "dependencies": {
     "next": "14.2.5",
