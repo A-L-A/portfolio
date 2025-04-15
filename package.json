@@ -11,6 +11,7 @@
     "deploy": "next build && touch out/.nojekyll && cp public/CNAME out/ && gh-pages -d out -t true"
   },
   "dependencies": {
+    "framer-motion": "^12.6.5",
     "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18",

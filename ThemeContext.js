@@ -1,7 +1,12 @@
+// ThemeContext.js
+"use client"; 
+
 import React, { createContext, useContext, useState, useEffect } from "react";
 
+// Create the context object
 const ThemeContext = createContext();
 
+// ThemeProvider wraps around all components in RootLayout
 export const ThemeProvider = ({ children }) => {
   const [darkMode, setDarkMode] = useState(false);
 
@@ -13,9 +18,7 @@ export const ThemeProvider = ({ children }) => {
     }
   }, [darkMode]);
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
+  const toggleDarkMode = () => setDarkMode(prev => !prev);
 
   return (
     <ThemeContext.Provider value={{ darkMode, toggleDarkMode }}>
@@ -24,4 +27,5 @@ export const ThemeProvider = ({ children }) => {
   );
 };
 
+// Custom hook to access ThemeContext
 export const useTheme = () => useContext(ThemeContext);
