@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import Image from "next/image";
 import web1 from "../public/web1.png";
 import web2 from "../public/web2.png";
@@ -7,6 +7,40 @@ import web4 from "../public/web4.png";
 import { BsArrowUpRight } from "react-icons/bs";
 
 const Portfolio = () => {
+  const projectRefs = useRef([]);
+  const sectionRef = useRef(null);
+
+  // Add animation when section comes into view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          
+          // Animate projects with staggered delay
+          projectRefs.current.forEach((project, index) => {
+            if (project) {
+              setTimeout(() => {
+                project.classList.add("project-visible");
+              }, 150 * index);
+            }
+          });
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   const projects = [
     {
       src: web1,
@@ -49,10 +83,11 @@ const Portfolio = () => {
   return (
     <section
       id="portfolio"
-      className="min-h-screen flex items-center justify-center py-20 bg-beige dark:bg-gray-800 dark:text-white transition-all duration-500"
+      ref={sectionRef}
+      className="min-h-screen flex items-center justify-center py-20 transition-all duration-500"
     >
       <div className="text-center p-4 sm:p-10 max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-brown dark:text-brown-light mb-4 section-heading">
+        <h2 className="text-2xl md:text-3xl font-bold text-brown dark:text-brown-light mb-4">
           My Projects
         </h2>
         <p className="text-lg max-w-3xl mx-auto mb-12 text-gray-700 dark:text-gray-300">
@@ -63,9 +98,13 @@ const Portfolio = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden flex flex-col h-full hover:transform hover:scale-[1.02] transition-all duration-300"
+              ref={el => projectRefs.current[index] = el}
+              className="bg-beige/80 dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden flex flex-col h-full 
+                         hover:transform hover:scale-[1.02] transition-all duration-300
+                         opacity-0 translate-y-8 project-animation"
+              style={{transitionDelay: `${index * 150}ms`}}
             >
-              {/* Project image with category tag */}
+              {/* Project image with category tag and hover effect */}
               <div className="relative aspect-video overflow-hidden group">
                 <Image
                   src={project.src}
@@ -73,6 +112,7 @@ const Portfolio = () => {
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-brown/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute top-4 right-4 bg-brown/90 text-white text-xs font-bold py-1 px-3 rounded-full">
                   {project.category}
                 </div>
@@ -105,6 +145,20 @@ const Portfolio = () => {
           ))}
         </div>
       </div>
+
+      {/* Add custom CSS for animations */}
+      <style jsx>{`
+        .project-animation {
+          opacity: 0;
+          transform: translateY(20px);
+          transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        
+        .project-visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      `}</style>
     </section>
   );
 };
