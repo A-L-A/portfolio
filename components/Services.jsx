@@ -186,28 +186,6 @@ const Services = () => {
         className="absolute inset-0 -z-10 opacity-70"
       />
       
-      {/* Decorative corner element */}
-      <div className="absolute top-0 right-0 w-32 h-32 opacity-20 pointer-events-none">
-        {darkMode ? (
-          // Star pattern for dark mode
-          <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" className="text-brown-light w-full h-full">
-            <path d="M50 10 L55 35 L80 35 L60 50 L70 75 L50 60 L30 75 L40 50 L20 35 L45 35 Z" fill="currentColor" opacity="0.5" />
-            <path d="M20 15 L22 25 L30 25 L23 30 L26 40 L20 35 L14 40 L17 30 L10 25 L18 25 Z" fill="currentColor" opacity="0.7" />
-            <path d="M75 20 L77 28 L85 28 L78 33 L81 41 L75 36 L69 41 L72 33 L65 28 L73 28 Z" fill="currentColor" opacity="0.6" />
-          </svg>
-        ) : (
-          // Leaf pattern for light mode
-          <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" className="text-brown w-full h-full">
-            <path d="M20,80 Q50,40 80,80" stroke="currentColor" strokeWidth="2" fill="none" opacity="0.3" transform="rotate(180 50 50)" />
-            <path d="M30,70 Q50,30 70,70" stroke="currentColor" strokeWidth="2" fill="none" opacity="0.4" transform="rotate(180 50 50)" />
-            <path d="M40,60 Q50,20 60,60" stroke="currentColor" strokeWidth="2" fill="none" opacity="0.5" transform="rotate(180 50 50)" />
-            <ellipse cx="80" cy="20" rx="5" ry="3" fill="currentColor" opacity="0.5" />
-            <ellipse cx="70" cy="30" rx="4" ry="2" fill="currentColor" opacity="0.6" />
-            <ellipse cx="60" cy="40" rx="3" ry="2" fill="currentColor" opacity="0.7" />
-          </svg>
-        )}
-      </div>
-      
       <div 
         ref={sectionRef} 
         className="text-center p-4 sm:p-8 max-w-6xl mx-auto reveal-section z-10"

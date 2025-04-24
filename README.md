@@ -4,7 +4,7 @@ Welcome to my personal portfolio website repository. This site showcases my work
 
 ## 🚀 Live Site
 
-Visit my portfolio at [https://anezelyse.com](
+Visit my portfolio at [https://anezelyse.com]
 
 ## ✨ Features
 
