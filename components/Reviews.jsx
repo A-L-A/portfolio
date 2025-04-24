@@ -50,13 +50,13 @@ const Reviews = () => {
   // Auto-play functionality
   useEffect(() => {
     let interval;
-    
+
     if (autoplay) {
       interval = setInterval(() => {
         nextReview();
       }, 5000); // Slide every 5 seconds
     }
-    
+
     return () => {
       if (interval) clearInterval(interval);
     };
@@ -66,7 +66,7 @@ const Reviews = () => {
   const handleManualControl = (callback) => {
     setAutoplay(false); // Pause autoplay
     callback(); // Execute the navigation
-    
+
     // Resume autoplay after a period of inactivity
     setTimeout(() => {
       setAutoplay(true);
@@ -80,7 +80,7 @@ const Reviews = () => {
     >
       <div className="text-center p-4 sm:p-10 max-w-6xl mx-auto">
         <h2 className="section-heading mb-10">Client Testimonials</h2>
-        
+
         {/* Instructions for getting reviews */}
         <div className="mb-12 max-w-2xl mx-auto">
           <p className="text-gray-700 dark:text-gray-300">
@@ -88,18 +88,18 @@ const Reviews = () => {
             Want to add your testimonial? Share your feedback via email or connect with me on LinkedIn!
           </p>
         </div>
-        
+
         {/* Reviews carousel */}
         <div className="relative px-6 md:px-10 mt-6">
           {/* Carousel controls - left */}
-          <button 
-            onClick={() => handleManualControl(prevReview)} 
+          <button
+            onClick={() => handleManualControl(prevReview)}
             className="absolute left-0 top-1/2 -translate-y-1/2 z-10 text-brown dark:text-brown-light text-3xl hover:scale-110 transition-transform duration-300"
             aria-label="Previous review"
           >
             <BsArrowLeftCircle />
           </button>
-          
+
           {/* Reviews container */}
           <div className="overflow-hidden relative max-w-4xl mx-auto">
             <div className="flex items-center justify-center">
@@ -109,7 +109,7 @@ const Reviews = () => {
                 <div className="absolute top-6 left-6 text-brown/20 dark:text-brown-light/20 text-6xl">
                   <BsQuote />
                 </div>
-                
+
                 <div className="flex flex-col md:flex-row items-center text-left gap-8">
                   {/* Profile image with fallback */}
                   <div className="min-w-[100px]">
@@ -121,14 +121,14 @@ const Reviews = () => {
                         fill
                         className="object-cover"
                       /> */}
-                      
+
                       {/* Fallback - first letter of name */}
                       <div className="flex items-center justify-center h-full text-3xl font-bold text-brown dark:text-brown-light">
                         {reviews[currentIndex].name.charAt(0)}
                       </div>
                     </div>
                   </div>
-                  
+
                   {/* Review content */}
                   <div>
                     {/* Rating stars */}
@@ -137,12 +137,10 @@ const Reviews = () => {
                         <BsFillStarFill key={i} className="text-amber-400" />
                       ))}
                     </div>
-                    
+
                     {/* Review text */}
-                    <blockquote className="text-lg italic mb-4 relative z-10">
-                      "{reviews[currentIndex].text}"
-                    </blockquote>
-                    
+                    <blockquote className="text-lg italic mb-4 relative z-10">&ldquo;{reviews[currentIndex].text}&rdquo;</blockquote>
+
                     {/* Reviewer info */}
                     <div>
                       <h4 className="font-semibold text-lg text-brown dark:text-brown-light">
@@ -156,26 +154,25 @@ const Reviews = () => {
                 </div>
               </div>
             </div>
-            
+
             {/* Slide indicators */}
             <div className="flex justify-center mt-8 gap-2">
               {reviews.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => handleManualControl(() => setCurrentIndex(index))}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    currentIndex === index 
-                      ? 'bg-brown dark:bg-brown-light w-6' 
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${currentIndex === index
+                      ? 'bg-brown dark:bg-brown-light w-6'
                       : 'bg-gray-300 dark:bg-gray-600'
-                  }`}
+                    }`}
                   aria-label={`Go to review ${index + 1}`}
                 />
               ))}
             </div>
           </div>
-          
+
           {/* Carousel controls - right */}
-          <button 
+          <button
             onClick={() => handleManualControl(nextReview)}
             className="absolute right-0 top-1/2 -translate-y-1/2 z-10 text-brown dark:text-brown-light text-3xl hover:scale-110 transition-transform duration-300"
             aria-label="Next review"
