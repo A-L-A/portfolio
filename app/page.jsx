@@ -8,69 +8,71 @@ import Portfolio from "@/components/Portfolio";
 // import Reviews from "@/components/Reviews";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-
 import { useTheme } from "../ThemeContext";
 
+/**
+ * Main Home component that assembles all sections of the portfolio website
+ * 
+ * @returns {JSX.Element} The complete homepage
+ */
 export default function Home() {
   const { darkMode } = useTheme();
   
   // Global scroll observer for section animations
   useEffect(() => {
-    // Function to handle intersection observations for section animations
-    const handleIntersection = (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    };
-    
-    // Set up the intersection observer
-    const observer = new IntersectionObserver(handleIntersection, {
-      root: null, // viewport
-      threshold: 0.15, // 15% of the section must be visible
-      rootMargin: '0px 0px -10% 0px' // Trigger slightly before section comes into view
-    });
+    // Setup intersection observer for section animations
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { 
+        threshold: 0.15,
+        rootMargin: '0px 0px -10% 0px'
+      }
+    );
     
     // Observe all sections
     document.querySelectorAll('section').forEach(section => {
       observer.observe(section);
     });
     
+    // Cleanup observer on component unmount
     return () => {
-      // Clean up observer
-      if (observer) {
-        document.querySelectorAll('section').forEach(section => {
-          observer.unobserve(section);
-        });
-      }
+      document.querySelectorAll('section').forEach(section => {
+        observer.unobserve(section);
+      });
     };
   }, []);
 
-  // Add global CSS for alternating section backgrounds
+  // Apply alternating section backgrounds
   useEffect(() => {
-    // Function to apply alternating backgrounds to sections
-    const applySectionBackgrounds = () => {
-      const sections = document.querySelectorAll('section');
-      sections.forEach((section, index) => {
-        // Remove any existing background classes
-        section.classList.remove('bg-beige', 'bg-beige-dark', 'dark:bg-gray-800', 'dark:bg-gray-900');
-        
-        // Apply alternating backgrounds
-        if (index % 2 === 0) {
-          section.classList.add('bg-beige', 'dark:bg-gray-900');
-        } else {
-          section.classList.add('bg-beige-dark', 'dark:bg-gray-800');
-        }
-      });
-    };
+    // Identify sections for alternating backgrounds
+    const sections = [
+      document.getElementById('services'),
+      document.getElementById('portfolio'),
+      document.getElementById('contact')
+    ].filter(Boolean);
     
-    applySectionBackgrounds();
+    // Remove any existing background classes
+    sections.forEach(section => {
+      section.classList.remove(
+        'bg-white', 'bg-beige', 'bg-beige-dark', 
+        'dark:bg-gray-800', 'dark:bg-gray-900', 'dark:bg-gray-700'
+      );
+    });
     
-    // Also apply when dark mode changes
-    return () => {
-      applySectionBackgrounds();
-    };
+    // Apply alternating backgrounds
+    sections.forEach((section, index) => {
+      if (index % 2 === 0) {
+        section.classList.add('bg-white', 'dark:bg-gray-800');
+      } else {
+        section.classList.add('bg-beige', 'dark:bg-gray-900');
+      }
+    });
   }, [darkMode]);
 
   return (
@@ -79,41 +81,9 @@ export default function Home() {
       <Hero />
       <Services />
       <Portfolio />
-      {/* <Reviews /> */}
+      {/* <Reviews /> - Uncomment to add reviews section */}
       <Contact />
       <Footer />
-      
-      {/* Global styles for animations and section transitions */}
-      <style jsx global>{`
-        /* Section entry animations */
-        section {
-          opacity: 0;
-          transform: translateY(20px);
-          transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        
-        section.visible {
-          opacity: 1;
-          transform: translateY(0);
-        }
-        
-        /* Smooth transitions between sections */
-        section {
-          transition: background-color 0.5s ease;
-        }
-        
-        /* Additional animation for card entry effects */
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
     </main>
   );
 }

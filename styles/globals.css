@@ -1,4 +1,4 @@
-/* global.css */
+/* globals.css - Optimized and consolidated styles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -11,7 +11,6 @@
   body {
     font-family: 'Burtons', monospace;
     background-color: #f9f3ef;
-    /* light beige background */
     color: #1a1a1a;
     transition: background-color 0.4s ease, color 0.4s ease;
   }
@@ -22,12 +21,7 @@
     color: #f5f5f5;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
   }
 
@@ -37,6 +31,11 @@
 
   ::selection {
     background: #77503d;
+    color: white;
+  }
+
+  .dark ::selection {
+    background: #a37a6b;
     color: white;
   }
 }
@@ -76,6 +75,23 @@
 .section-transition.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Section entry animations */
+section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Smooth transitions between sections */
+section {
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 /* Scroll down indicator */
@@ -123,7 +139,6 @@
     opacity: 1;
     transform: translateX(-50%) translateY(0);
   }
-
   100% {
     opacity: 0;
     transform: translateX(-50%) translateY(18px);
@@ -182,108 +197,150 @@
 
 /* Contact form styles */
 .contact-input {
-    backdrop-filter: blur(8px);
-    font-family: inherit;
-    font-size: 1rem;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.5);
-    border: 1px solid rgba(119, 80, 61, 0.2);
-    padding: 12px 16px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-  }
+  backdrop-filter: blur(8px);
+  font-family: inherit;
+  font-size: 1rem;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(119, 80, 61, 0.2);
+  padding: 12px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
 
-  .dark .contact-input {
-    background-color: rgba(42, 42, 42, 0.5);
-    border: 1px solid rgba(163, 122, 107, 0.2);
-    color: white;
-  }
+.dark .contact-input {
+  background-color: rgba(42, 42, 42, 0.5);
+  border: 1px solid rgba(163, 122, 107, 0.2);
+  color: white;
+}
 
-  .contact-input:focus {
-    border-color: #77503d;
-    box-shadow: 0 0 0 3px rgba(119, 80, 61, 0.2);
-    outline: none;
-  }
+.contact-input:focus {
+  border-color: #77503d;
+  box-shadow: 0 0 0 3px rgba(119, 80, 61, 0.2);
+  outline: none;
+}
 
-  .dark .contact-input:focus {
-    border-color: #a37a6b;
-    box-shadow: 0 0 0 3px rgba(163, 122, 107, 0.2);
-  }
+.dark .contact-input:focus {
+  border-color: #a37a6b;
+  box-shadow: 0 0 0 3px rgba(163, 122, 107, 0.2);
+}
 
-  /* Review carousel styles */
-  .review-slider {
-    position: relative;
-    overflow: hidden;
-  }
+/* Review carousel styles */
+.review-slider {
+  position: relative;
+  overflow: hidden;
+}
 
-  .review-slide {
-    transition: transform 0.5s ease;
-  }
+.review-slide {
+  transition: transform 0.5s ease;
+}
 
-  .arrow-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: white;
-    color: #77503d;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
+.arrow-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  color: #77503d;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 
-  .dark .arrow-button {
-    background: #2a2a2a;
-    color: #a37a6b;
-  }
+.dark .arrow-button {
+  background: #2a2a2a;
+  color: #a37a6b;
+}
 
-  .arrow-button:hover {
-    background: #77503d;
-    color: white;
-  }
+.arrow-button:hover {
+  background: #77503d;
+  color: white;
+}
 
-  .dark .arrow-button:hover {
-    background: #a37a6b;
-  }
+.dark .arrow-button:hover {
+  background: #a37a6b;
+}
 
-  .left-arrow {
-    left: 10px;
-  }
+.left-arrow {
+  left: 10px;
+}
 
-  .right-arrow {
-    right: 10px;
-  }
+.right-arrow {
+  right: 10px;
+}
 
-  /* Review card styles */
-  .review-card {
-    background: white;
-    border-radius: 16px;
-    padding: 24px;
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.08);
-    position: relative;
-  }
+/* Review card styles */
+.review-card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
 
-  .dark .review-card {
-    background: #2a2a2a;
-  }
+.dark .review-card {
+  background: #2a2a2a;
+}
 
-  .review-card::before {
-    content: '"';
-    position: absolute;
-    top: -20px;
-    left: 20px;
-    font-size: 80px;
-    color: #77503d;
-    opacity: 0.1;
-    font-family: serif;
-  }
+.review-card::before {
+  content: '"';
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  font-size: 80px;
+  color: #77503d;
+  opacity: 0.1;
+  font-family: serif;
+}
 
-  .dark .review-card::before {
-    color: #a37a6b;
+.dark .review-card::before {
+  color: #a37a6b;
+}
+
+/* Project card animations */
+.project-animation {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.project-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}

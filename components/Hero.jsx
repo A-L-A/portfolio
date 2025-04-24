@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import { useTheme } from "../ThemeContext";
+import { setupParticles } from "../utils/particle";
 
 const Hero = () => {
   const { darkMode } = useTheme();
@@ -30,15 +31,14 @@ const Hero = () => {
     };
   }, [index]);
 
-  // Enhanced star animation with particle effects
+  // Star animation with particle effects
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     
     const ctx = canvas.getContext("2d");
-    let animationFrameId;
-    let celestialObjects = [];
     
+    // Set canvas size
     const setCanvasSize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -46,13 +46,17 @@ const Hero = () => {
     
     setCanvasSize();
     window.addEventListener("resize", setCanvasSize);
-
+    
+    // Define custom particle animation (without using the utility)
+    let animationFrameId;
+    let celestialObjects = [];
+    
     // Star class with sparkle effects
     class Star {
       constructor() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2.5 + 0.5; // Various star sizes
+        this.size = Math.random() * 2.5 + 0.5;
         this.twinkleSpeed = Math.random() * 0.05 + 0.01;
         this.twinkle = Math.random() * Math.PI;
         this.speedX = (Math.random() - 0.5) * 0.15;
@@ -61,7 +65,6 @@ const Hero = () => {
         this.sparkleTimer = 0;
         this.sparkleInterval = Math.random() * 200 + 100;
         
-        // Different color scheme for dark/light mode
         const baseOpacity = Math.random() * 0.5 + 0.3;
         this.maxOpacity = baseOpacity; 
         this.baseColor = darkMode ? "255, 255, 255" : "119, 80, 61";
@@ -153,10 +156,10 @@ const Hero = () => {
       }
     }
 
-    // Initialize stars (20% fewer)
+    // Initialize stars
     const init = () => {
       celestialObjects = [];
-      const starCount = Math.min(Math.floor(window.innerWidth / 5), 240); // 20% reduction
+      const starCount = Math.min(Math.floor(window.innerWidth / 5), 240);
       
       for (let i = 0; i < starCount; i++) {
         celestialObjects.push(new Star());
@@ -177,14 +180,14 @@ const Hero = () => {
 
     init();
     animate();
-
+    
     return () => {
       window.removeEventListener("resize", setCanvasSize);
       cancelAnimationFrame(animationFrameId);
     };
   }, [darkMode]);
 
-  // Smooth scroll to next section and highlight nav item
+  // Smooth scroll to next section
   const scrollToNextSection = () => {
     const servicesSection = document.getElementById('services');
     

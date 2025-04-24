@@ -1,4 +1,3 @@
-// ThemeContext.js
 "use client"; 
 
 import React, { createContext, useContext, useState, useEffect } from "react";
@@ -10,11 +9,28 @@ const ThemeContext = createContext();
 export const ThemeProvider = ({ children }) => {
   const [darkMode, setDarkMode] = useState(false);
 
+  // Handle initial theme based on user preference
+  useEffect(() => {
+    // Check if user has a saved preference
+    const savedTheme = localStorage.getItem('theme');
+    
+    // Check if system prefers dark mode
+    const prefersDark = window.matchMedia && 
+      window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+      setDarkMode(true);
+    }
+  }, []);
+
+  // Apply theme changes to document
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add("dark");
+      localStorage.setItem('theme', 'dark');
     } else {
       document.documentElement.classList.remove("dark");
+      localStorage.setItem('theme', 'light');
     }
   }, [darkMode]);
 

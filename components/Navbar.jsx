@@ -21,14 +21,14 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 px-8 py-6 flex justify-between items-center backdrop-blur-md transition-all duration-300 ${
+      className={`fixed top-0 w-full z-50 px-8 py-2 flex justify-between items-center backdrop-blur-md transition-all duration-300 ${
         scrolled ? "shadow-lg bg-white/90 dark:bg-gray-900/90" : "bg-transparent"
       }`}
     >
-      {/* Logo L.A.A. with Cursive Font */}
+      {/* Logo with Cursive Font */}
       <Link href="/" passHref>
         <h1 className="text-2xl md:text-3xl font-cursive text-brown dark:text-brown-light cursor-pointer transition-all duration-300 hover:scale-105">
-          L.A.A.
+          L.A.A
         </h1>
       </Link>
 

@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Lyse A. Aneze - Portfolio Website
 
-## Getting Started
+Welcome to my personal portfolio website repository. This site showcases my work as a web designer and developer with a clean, modern aesthetic and responsive design.
 
-First, run the development server:
+## 🚀 Live Site
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Visit my portfolio at [https://anezelyse.com](
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Responsive Design: Optimized for all devices from mobile to desktop
+- Dark/Light Mode: Toggle between themes with persistent user preference
+- Interactive UI: Smooth animations and transitions for engaging user experience
+- Project Showcase: Gallery of my recent design and development work
+- Contact Form: Integrated with EmailJS for direct communication
+- Performance Optimized: Fast loading times and efficient code structure
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 🛠️ Built With
 
-## Learn More
+- [Next.js](https://nextjs.org/)**: React framework for production
+- [TailwindCSS](https://tailwindcss.com/)**: Utility-first CSS framework
+- [React](https://reactjs.org/)**: JavaScript library for building user interfaces
+- [EmailJS](https://www.emailjs.com/)**: Email services for contact form functionality
+- [React Icons](https://react-icons.github.io/react-icons/)**: Icon library
 
-To learn more about Next.js, take a look at the following resources:
+## 🖥️ Local Development
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To run this project locally:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/portfolio-website.git
+   cd portfolio-website
+   ```
 
-## Deploy on Vercel
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+4. Open [http://localhost:3000] in your browser
+
+## 📝 Notes
+
+This repository is primarily for viewing purposes. While it's public, I'm not actively seeking contributions, but feel free to use it as inspiration for your own portfolio.
+
+P.S: Feel free to reach out to me for any inquiries
+
+## ⭐ Support
+
+If you like my website, please star this repo!
+
+© 2025 Lyse A. Aneze. All Rights Reserved.
