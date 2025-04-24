@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
+import { BsFillMoonStarsFill, BsFillSunFill, BsList, BsX } from "react-icons/bs";
 import Link from "next/link";
 import { useTheme } from "../ThemeContext";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const { darkMode, toggleDarkMode } = useTheme();
 
   useEffect(() => {
@@ -17,11 +18,19 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   if (!mounted) return null;
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 px-8 py-2 flex justify-between items-center backdrop-blur-md transition-all duration-300 ${
+      className={`fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center backdrop-blur-md transition-all duration-300 ${
         scrolled ? "shadow-lg bg-white/90 dark:bg-gray-900/90" : "bg-transparent"
       }`}
     >
@@ -31,6 +40,15 @@ const Navbar = () => {
           L.A.A
         </h1>
       </Link>
+
+      {/* Mobile Menu Button */}
+      <button
+        className="md:hidden text-2xl text-brown dark:text-brown-light focus:outline-none"
+        onClick={toggleMenu}
+        aria-label="Toggle navigation menu"
+      >
+        {menuOpen ? <BsX /> : <BsList />}
+      </button>
 
       {/* Desktop Links */}
       <ul className="hidden md:flex items-center gap-8 text-sm md:text-base font-medium">
@@ -59,6 +77,44 @@ const Navbar = () => {
           </button>
         </li>
       </ul>
+
+      {/* Mobile Menu - Slide Down Panel */}
+      {menuOpen && (
+        <div className="absolute top-full left-0 right-0 bg-white/95 dark:bg-gray-900/95 shadow-lg backdrop-blur-md md:hidden transition-all duration-300 py-4">
+          <ul className="flex flex-col items-center gap-6 text-base font-medium">
+            {["home", "services", "portfolio", "contact"].map((section) => (
+              <li key={section} className="w-full text-center">
+                <a
+                  href={`#${section}`}
+                  className="block py-3 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-brown dark:hover:text-brown-light transition-colors duration-300 capitalize"
+                  onClick={closeMenu}
+                >
+                  {section}
+                </a>
+              </li>
+            ))}
+            
+            {/* Dark Mode Toggle in Mobile Menu */}
+            <li className="w-full text-center py-3">
+              <button
+                onClick={toggleDarkMode}
+                className="inline-flex items-center gap-2 text-brown dark:text-brown-light"
+                aria-label="Toggle dark mode"
+              >
+                {darkMode ? (
+                  <>
+                    <BsFillSunFill /> Light Mode
+                  </>
+                ) : (
+                  <>
+                    <BsFillMoonStarsFill /> Dark Mode
+                  </>
+                )}
+              </button>
+            </li>
+          </ul>
+        </div>
+      )}
     </nav>
   );
 };

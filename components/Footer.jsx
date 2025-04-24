@@ -15,7 +15,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-beige dark:bg-gray-900 text-gray-700 dark:text-gray-300 py-10 relative ">
+    <footer className="bg-beige dark:bg-gray-900 text-gray-700 dark:text-gray-300 py-10 relative">
       {/* Scroll to top button */}
       <button
         onClick={scrollToTop}
@@ -38,9 +38,10 @@ const Footer = () => {
       </button>
       
       <div className="max-w-4xl mx-auto px-6 md:px-10">
-        <div className="grid grid-cols-3 items-center">
-          {/* Copyright - left aligned */}
-          <div className="text-left">
+        {/* Responsive footer grid - stacked on mobile, side by side on larger screens */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 items-center text-center">
+          {/* Copyright - centered on mobile, left aligned on desktop */}
+          <div className="sm:text-left">
             <p className="text-sm font-medium">
               &copy; {currentYear} All rights reserved
             </p>
@@ -56,8 +57,8 @@ const Footer = () => {
             </p>
           </div>
           
-          {/* Social links - right aligned */}
-          <div className="flex justify-end ml-10 space-x-5 pr-12">
+          {/* Social links - centered on mobile, right aligned on desktop */}
+          <div className="flex justify-center sm:justify-end space-x-5">
             <a
               href="https://linkedin.com/in/lyseaneze/"
               target="_blank"
@@ -83,8 +84,6 @@ const Footer = () => {
               </svg>
             </a>
           </div>
-
-          
         </div>
       </div>
     </footer>
