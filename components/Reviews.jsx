@@ -79,9 +79,9 @@ const Reviews = () => {
       className="min-h-screen flex items-center justify-center py-20 bg-white dark:bg-gray-900 dark:text-white transition-all duration-500"
     >
       <div className="text-center p-4 sm:p-10 max-w-6xl mx-auto">
-        <h2 className="section-heading mb-10">Client Testimonials</h2>
+        {/* <h2 className="section-heading mb-10">Client Testimonials</h2> */}
 
-        {/* Instructions for getting reviews */}
+    
         <div className="mb-12 max-w-2xl mx-auto">
           <p className="text-gray-700 dark:text-gray-300">
             These reviews are from real clients who were thrilled with their results.

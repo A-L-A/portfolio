@@ -273,12 +273,12 @@ const Contact = () => {
       <div className="max-w-4xl mx-auto w-full">
         {/* Heading with consistent styling */}
         <div className="text-center mb-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-brown dark:text-brown-light relative inline-block">
+          <h2 className="text-2xl md:text-2xl font-bold text-brown dark:text-brown-light relative inline-block">
             Get In Touch
             <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-brown dark:bg-brown-light"></span>
           </h2>
           <p className="text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto text-sm md:text-base">
-            Have a project in mind? Let's discuss how I can help bring your vision to life.
+            Have a project in mind? Let's discuss how to bring your vision to life.
           </p>
         </div>
 

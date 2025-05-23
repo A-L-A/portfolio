@@ -152,7 +152,7 @@ const Services = () => {
     {
       icon: <BsPaletteFill className="text-4xl text-brown dark:text-brown-light" />,
       title: "Web Design",
-      description: "Visually stunning sites that turn visitors into loyal customers.",
+      description: "Visually stunning sites that turn visitors into engaged users.",
       features: ["Responsive Designs", "Brand Identity", "UX-Driven"],
       gradient: "from-pink-200 via-red-100 to-yellow-100",
       darkGradient: "from-pink-900/30 via-red-900/30 to-yellow-900/30"
@@ -160,16 +160,16 @@ const Services = () => {
     {
       icon: <BsCodeSlash className="text-3xl text-brown dark:text-brown-light" />,
       title: "Web Development",
-      description: "Custom-built sites using Code, WordPress, or Shopify—AI-powered for optimal performance & scalability.",
-      features: ["Content Management", "Automation", "SEO Ready"],
+      description: "Custom-built sites for optimal performance & scalability.",
+      features: ["Code", "Content Management", "SEO Ready"],
       gradient: "from-yellow-100 via-green-100 to-blue-100",
       darkGradient: "from-yellow-900/30 via-green-900/30 to-blue-900/30"
     },
     {
       icon: <BsGearFill className="text-4xl text-brown dark:text-brown-light" />,
-      title: "Maintenance & Performance",
-      description: "Proactive site updates, speed, and security—automated for hassle-free management.",
-      features: ["Speed Optimization", "Auto-Updates", "Analytics"],
+      title: "Maintenance",
+      description: "Proactive site updates, speed, and security—automated.",
+      features: ["Speed Optimization", "Automation", "Analytics"],
       gradient: "from-blue-100 via-purple-100 to-pink-100",
       darkGradient: "from-blue-900/30 via-purple-900/30 to-pink-900/30"
     }
@@ -190,8 +190,8 @@ const Services = () => {
         ref={sectionRef} 
         className="text-center p-4 sm:p-8 max-w-6xl mx-auto reveal-section z-10"
       >
-        <h2 className="text-2xl md:text-3xl font-bold text-brown dark:text-brown-light relative inline-block">
-          What I Offer
+        <h2 className="text-2xl md:text-2xl font-bold text-brown dark:text-brown-light relative inline-block">
+          What I offer
           <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-brown dark:bg-brown-light"></span>
         </h2>
         <p className="text-gray-600 dark:text-gray-300 mt-4 text-sm md:text-base max-w-xl mx-auto mb-10">

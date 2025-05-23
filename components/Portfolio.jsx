@@ -213,11 +213,11 @@ const Portfolio = () => {
         className="absolute inset-0 -z-10 opacity-70"
       />
 
-      <div className="text-center p-4 sm:p-8 max-w-7xl mx-auto z-10">
+      <div className="text-center p-4 sm:p-8 max-w-7xl mx-auto z-10 place-items-center">
         {/* Heading with consistent styling */}
         <div className="text-center mb-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-brown dark:text-brown-light relative inline-block">
-            My Projects
+          <h2 className="text-2xl md:text-2xl font-bold text-brown dark:text-brown-light relative inline-block">
+            Projects
             <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-brown dark:bg-brown-light"></span>
           </h2>
           <p className="text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto text-sm md:text-base">
@@ -225,18 +225,15 @@ const Portfolio = () => {
           </p>
         </div>
 
-        {/* 3-column grid with smaller cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
+        {/* Project Flexbox Cards */}
+        <div className="flex flex-wrap justify-center gap-6 mt-8">
           {projects.map((project, index) => (
             <div
               key={index}
-              ref={el => projectRefs.current[index] = el}
-              className="bg-beige/80 dark:bg-gray-700 rounded-lg shadow-md overflow-hidden flex flex-col
-                         hover:transform hover:scale-[1.02] transition-all duration-300
-                         opacity-0 translate-y-8 project-animation relative h-[340px]"
+              ref={(el) => (projectRefs.current[index] = el)}
+              className="bg-beige/80 dark:bg-gray-700 rounded-lg shadow-md overflow-hidden flex flex-col hover:transform hover:scale-[1.05] transition-all duration-300 opacity-0 translate-y-8 project-animation relative h-[400px] w-full sm:w-80 lg:w-96"
               style={{ transitionDelay: `${index * 150}ms` }}
             >
-              {/* Project image with category tag and hover effect */}
               <div className="relative aspect-video overflow-hidden group">
                 <Image
                   src={project.src}
@@ -250,21 +247,19 @@ const Portfolio = () => {
                 </div>
               </div>
 
-              {/* Project content */}
-              <div className="p-3 flex flex-col flex-grow text-center">
-                <h3 className="text-base font-semibold text-brown dark:text-brown-light mb-1 line-clamp-1">
+              <div className="p-4 flex flex-col flex-grow text-center">
+                <h3 className="text-lg font-semibold text-brown dark:text-brown-light mb-2 line-clamp-1">
                   {project.title}
                 </h3>
 
-                <p className="text-xs text-gray-700 dark:text-gray-300 mb-3 flex-grow line-clamp-3">
+                <p className="text-sm text-gray-700 dark:text-gray-300 mb-4 flex-grow line-clamp-3">
                   {project.description}
                 </p>
 
-                {/* Project action button - always at bottom */}
                 <div className="mt-auto pt-2 border-t border-gray-100 dark:border-transparent">
                   <a
                     href={project.link}
-                    className="inline-flex items-center bg-brown text-white py-1.5 px-2.5 rounded text-xs hover:bg-opacity-90 transition-all duration-300 group"
+                    className="inline-flex items-center bg-brown text-white py-2 px-4 rounded text-sm hover:bg-opacity-90 transition-all duration-300 group"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -276,7 +271,7 @@ const Portfolio = () => {
                       strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      className="w-3 h-3 ml-1 transform group-hover:translate-x-1 transition-transform duration-300"
+                      className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300"
                     >
                       <line x1="7" y1="17" x2="17" y2="7"></line>
                       <polyline points="7 7 17 7 17 17"></polyline>
@@ -287,6 +282,7 @@ const Portfolio = () => {
             </div>
           ))}
         </div>
+
       </div>
 
       {/* Custom CSS for animations */}

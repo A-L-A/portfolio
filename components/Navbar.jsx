@@ -30,13 +30,12 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center backdrop-blur-md transition-all duration-300 ${
-        scrolled ? "shadow-lg bg-white/90 dark:bg-gray-900/90" : "bg-transparent"
-      }`}
+      className={`fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center backdrop-blur-md transition-all duration-300 ${scrolled ? "shadow-lg bg-white/90 dark:bg-gray-900/90" : "bg-transparent"
+        }`}
     >
       {/* Logo with Cursive Font */}
       <Link href="/" passHref>
-        <h1 className="text-2xl md:text-3xl font-cursive text-brown dark:text-brown-light cursor-pointer transition-all duration-300 hover:scale-105">
+        <h1 className="text-2xl md:text-3xl font-dancing text-brown dark:text-brown-light cursor-pointer transition-all duration-300 hover:scale-105">
           L.A.A
         </h1>
       </Link>
@@ -56,12 +55,8 @@ const Navbar = () => {
           <li key={section}>
             <a
               href={`#${section}`}
-              className="relative group py-2 px-1"
-            >
-              <span className="relative z-10 hover:text-brown dark:hover:text-brown-light transition-colors duration-300 capitalize">
-                {section}
-              </span>
-              <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-brown dark:bg-brown-light group-hover:w-full transition-all duration-300"></span>
+              className="relative py-2 px-3 capitalize transition-all duration-300 hover:text-brown dark:hover:text-brown-light hover-glow-effect rounded-md"            >
+              {section}
             </a>
           </li>
         ))}
@@ -93,7 +88,7 @@ const Navbar = () => {
                 </a>
               </li>
             ))}
-            
+
             {/* Dark Mode Toggle in Mobile Menu */}
             <li className="w-full text-center py-3">
               <button
