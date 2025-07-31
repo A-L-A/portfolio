@@ -8,7 +8,7 @@ const Hero = () => {
   const [typedText, setTypedText] = useState("");
   const [index, setIndex] = useState(0);
   const canvasRef = useRef(null);
-  const text = "Web Designer & Developer";
+  const text = "Web Solutions Advisor & Developer";
 
   // Typing animation effect
   useEffect(() => {
@@ -47,7 +47,6 @@ const Hero = () => {
     setCanvasSize();
     window.addEventListener("resize", setCanvasSize);
 
-    // Define custom particle animation (without using the utility)
     let animationFrameId;
     let celestialObjects = [];
 
@@ -126,7 +125,6 @@ const Hero = () => {
         ctx.fillStyle = this.color;
         ctx.beginPath();
 
-        // Draw four-pointed star
         const spikes = 4;
         const outerRadius = this.size;
         const innerRadius = this.size / 2;
@@ -187,7 +185,7 @@ const Hero = () => {
     };
   }, [darkMode]);
 
-  // Smooth scroll to next section
+  //scroll to next section
   const scrollToNextSection = () => {
     const servicesSection = document.getElementById('services');
 

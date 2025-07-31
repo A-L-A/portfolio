@@ -151,15 +151,15 @@ const Services = () => {
   const services = [
     {
       icon: <BsPaletteFill className="text-4xl text-brown dark:text-brown-light" />,
-      title: "Web Design",
-      description: "Visually stunning sites that turn visitors into engaged users.",
-      features: ["Responsive Designs", "Brand Identity", "UX-Driven"],
+      title: "Digital Strategy & Architecture",
+      description: "Aligning application with your objectives through needs assessment, design, and roadmap development.",
+      features: ["Consultation", "Brand Identity", "UX-Driven"],
       gradient: "from-pink-200 via-red-100 to-yellow-100",
       darkGradient: "from-pink-900/30 via-red-900/30 to-yellow-900/30"
     },
     {
       icon: <BsCodeSlash className="text-3xl text-brown dark:text-brown-light" />,
-      title: "Web Development",
+      title: "Development",
       description: "Custom-built sites for optimal performance & scalability.",
       features: ["Code", "Content Management", "SEO Ready"],
       gradient: "from-yellow-100 via-green-100 to-blue-100",
