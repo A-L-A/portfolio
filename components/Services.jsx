@@ -151,8 +151,8 @@ const Services = () => {
   const services = [
     {
       icon: <BsPaletteFill className="text-4xl text-brown dark:text-brown-light" />,
-      title: "Digital Strategy & Architecture",
-      description: "Aligning application with your objectives through needs assessment, design, and roadmap development.",
+      title: "Assessment & Design",
+      description: "Aligning your application with goals through strategic assessment, design & planning.",
       features: ["Consultation", "Brand Identity", "UX-Driven"],
       gradient: "from-pink-200 via-red-100 to-yellow-100",
       darkGradient: "from-pink-900/30 via-red-900/30 to-yellow-900/30"
@@ -168,7 +168,7 @@ const Services = () => {
     {
       icon: <BsGearFill className="text-4xl text-brown dark:text-brown-light" />,
       title: "Maintenance",
-      description: "Proactive site updates, speed, and security—automated.",
+      description: "Proactive site updates, speed, and security automated.",
       features: ["Speed Optimization", "Automation", "Analytics"],
       gradient: "from-blue-100 via-purple-100 to-pink-100",
       darkGradient: "from-blue-900/30 via-purple-900/30 to-pink-900/30"
