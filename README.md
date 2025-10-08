@@ -17,33 +17,12 @@ Visit my portfolio at [https://anezelyse.com]
 
 ## 🛠️ Built With
 
-- [Next.js](https://nextjs.org/)**: React framework for production
-- [TailwindCSS](https://tailwindcss.com/)**: Utility-first CSS framework
-- [React](https://reactjs.org/)**: JavaScript library for building user interfaces
-- [EmailJS](https://www.emailjs.com/)**: Email services for contact form functionality
+- [Next.js](https://nextjs.org/): React framework for production
+- [TailwindCSS](https://tailwindcss.com/): Utility-first CSS framework
+- [React](https://reactjs.org/): JavaScript library for building user interfaces
+- [EmailJS](https://www.emailjs.com/): Email services for contact form functionality
 - [React Icons](https://react-icons.github.io/react-icons/)**: Icon library
 
-## 🖥️ Local Development
-
-To run this project locally:
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/portfolio-website.git
-   cd portfolio-website
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Run the development server:
-   ```bash
-   npm run dev
-   ```
-
-4. Open [http://localhost:3000] in your browser
 
 ## 📝 Notes
 
