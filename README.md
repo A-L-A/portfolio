@@ -30,4 +30,4 @@ P.S: Feel free to reach out to me for any inquiries
 
 If you like my website, please star this repo!
 
-© 2025 Lyse A. Aneze. All Rights Reserved.
+© 2026 Lyse A. Aneze. All Rights Reserved.
