@@ -160,7 +160,7 @@ const Services = () => {
     {
       icon: <BsCodeSlash className="text-3xl text-brown dark:text-brown-light" />,
       title: "Design",
-      description: "Turning ideas into Custom-built testable experiences before a single line of code.",
+      description: "Turning ideas into custom-built testable experiences before a single line of code.",
       features: ["User Journeys", "Design Systems", "Clickable Prototypes"],
       gradient: "from-yellow-100 via-green-100 to-blue-100",
       darkGradient: "from-yellow-900/30 via-green-900/30 to-blue-900/30"
