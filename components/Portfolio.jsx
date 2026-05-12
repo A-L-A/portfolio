@@ -18,37 +18,28 @@ const Portfolio = () => {
       src: web1,
       alt: "Live Music Mapping Platform",
       title: "Live Music Mapping Platform",
-      description:
-        "MERN stack application with user authentication and OpenStreetMap integration for interactive mapping.",
-      link: "https://muzika-frontend.onrender.com/",
-      category: "Full Stack"
+      description: "Honours capstone project. Music lovers struggle to discover live shows nearby. Built a map-based platform for discovery by location, date, and genre. (Literature review + working prototype)",
+      demoLink: "https://muzika-frontend.onrender.com/",
+      caseStudyLink: "https://docs.google.com/presentation/d/1e3YcOrYom8AjMCjCKBPByU6aMQpVRMOcFdDfRFiaF0o/edit?usp=sharing", 
+      category: "Research / Full Stack"
     },
     {
-      src: web2,
-      alt: "Restaurant Discovery Website",
-      title: "Restaurant Discovery Website",
-      description:
-        "React application with Chakra UI and Geoapify Places API for location-based restaurant discovery.",
-      link: "https://a-l-a.github.io/Restoz/",
-      category: "Frontend"
-    },
-    {
-      src: web3,
-      alt: "Fashion Store Landing Page",
-      title: "Fashion Store Landing Page",
-      description:
-        "Clean, minimalist design in Figma with modern layout and visual hierarchy for a fashion brand.",
-      link: "https://www.figma.com/proto/78BtCYSjD0OYZgd6OJkKTp/SAMPLE-UI-DESIGN-1?node-id=0-1&t=XVm4GNyOiuYziifN-1",
-      category: "Design"
+      src: web2, 
+      alt: "BeReal Product Management Externship",
+      title: "BeReal Product Externship",
+      description: "Analyzed declining active user metrics and sentiments to identify key friction point. Designed solution feature concept. Pitched recommendation with success metrics.",
+      demoLink: "https://www.figma.com/proto/eLwVKDeBHRgnnHPJR5Bzk4/BEREALQUICK-REPLY-FEATURE?node-id=7-342&t=Jj3LgNEJv8rKpd7p-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=7%3A342", 
+      caseStudyLink: "https://docs.google.com/presentation/d/1AZ4t5I7dsUaMYIMDHAJ6f02LoYBPM51J1zjgmxioIpA/edit?usp=sharing",
+      category: "Product Strategy & Design"
     },
     {
       src: web4,
       alt: "Real Estate Management System",
       title: "Real Estate Management System",
-      description:
-        "Custom UI design system in Figma with multi-screen navigation for real estate development management.",
-      link: "https://www.figma.com/design/Z60Swac1cjQo120PiTt1ud/Next-Gen-Developers-Management-System-Design-%3Fnode-id%3D1-3",
-      category: "Design"
+      description: "Custom UI design system in Figma for property development tracking and management",
+      demoLink: "https://www.figma.com/design/Z60Swac1cjQo120PiTt1ud/Next-Gen-Developers-Management-System-Design-%3Fnode-id%3D1-3",
+      caseStudyLink: "",
+      category: "Product Design"
     },
   ];
 
@@ -231,10 +222,11 @@ const Portfolio = () => {
             <div
               key={index}
               ref={(el) => (projectRefs.current[index] = el)}
-              className="bg-beige/80 dark:bg-gray-700 rounded-lg shadow-md overflow-hidden flex flex-col hover:transform hover:scale-[1.05] transition-all duration-300 opacity-0 translate-y-8 project-animation relative h-[400px] w-full sm:w-80 lg:w-96"
+              className="bg-beige/80 dark:bg-gray-700 rounded-lg shadow-md overflow-hidden flex flex-col hover:transform hover:scale-[1.05] transition-all duration-300 opacity-0 translate-y-8 project-animation relative h-auto min-h-[480px] w-full sm:w-80 lg:w-96"
               style={{ transitionDelay: `${index * 150}ms` }}
             >
-              <div className="relative aspect-video overflow-hidden group">
+              {/* Image Section - 4:3 ratio */}
+              <div className="relative aspect-[4/3] overflow-hidden group">
                 <Image
                   src={project.src}
                   alt={project.alt}
@@ -242,54 +234,72 @@ const Portfolio = () => {
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-brown/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute top-2 right-2 bg-brown/90 text-white text-xs font-bold py-1 px-2 rounded-full">
+                
+                {/* Category Badge - Bottom left */}
+                <div className="absolute bottom-2 left-2 bg-brown/90 text-white text-xs font-bold py-1 px-2 rounded-full">
                   {project.category}
                 </div>
               </div>
 
-              <div className="p-4 flex flex-col flex-grow text-center">
+              {/* Content Section - Left aligned */}
+              <div className="p-4 flex flex-col flex-grow text-left">
                 <h3 className="text-lg font-semibold text-brown dark:text-brown-light mb-2 line-clamp-1">
                   {project.title}
                 </h3>
 
-                <p className="text-sm text-gray-700 dark:text-gray-300 mb-4 flex-grow line-clamp-3">
+                <p className="text-sm text-gray-700 dark:text-gray-300 mb-4 flex-grow line-clamp-4">
                   {project.description}
                 </p>
 
-                <div className="mt-auto pt-2 border-t border-gray-100 dark:border-transparent">
-                  <a
-                    href={project.link}
-                    className="inline-flex items-center bg-brown text-white py-2 px-4 rounded text-sm hover:bg-opacity-90 transition-all duration-300 group"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <span>View Project</span>
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300"
+                {/* Buttons Section - Stacked (Case Study Primary, Demo Secondary) */}
+                <div className="mt-auto pt-3 border-t border-gray-200 dark:border-gray-600">
+                  {/* Primary Button - Case Study */}
+                  {project.caseStudyLink && project.caseStudyLink !== "" && (
+                    <a
+                      href={project.caseStudyLink}
+                      className="flex items-center justify-center bg-brown text-white py-2 px-4 rounded-md text-sm hover:bg-opacity-90 transition-all duration-300 group w-full mb-2"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      <line x1="7" y1="17" x2="17" y2="7"></line>
-                      <polyline points="7 7 17 7 17 17"></polyline>
-                    </svg>
-                  </a>
+                      <span>View Case Study</span>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300"
+                      >
+                        <line x1="7" y1="17" x2="17" y2="7"></line>
+                        <polyline points="7 7 17 7 17 17"></polyline>
+                      </svg>
+                    </a>
+                  )}
+                  
+                  {/* Secondary Button - Live Demo */}
+                  {project.demoLink && (
+                    <a
+                      href={project.demoLink}
+                      className="flex items-center justify-center bg-transparent border border-brown/50 text-brown dark:text-brown-light py-1.5 px-4 rounded-md text-xs hover:bg-brown/10 transition-all duration-300 w-full"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span>Live Demo ↗</span>
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
           ))}
         </div>
-
       </div>
 
       {/* Custom CSS for animations */}
       <style jsx>{`
         .project-animation {
           opacity: 0;
-          transform: translateY(20px);
+          transform: translateY(2rem);
           transition: opacity 0.5s ease, transform 0.5s ease;
         }
         
