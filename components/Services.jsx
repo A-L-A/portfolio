@@ -151,25 +151,25 @@ const Services = () => {
   const services = [
     {
       icon: <BsPaletteFill className="text-4xl text-brown dark:text-brown-light" />,
-      title: "Assessment & Design",
-      description: "Aligning your application with goals through strategic assessment, design & planning.",
-      features: ["Consultation", "Brand Identity", "UX-Driven"],
+      title: " Discovery & Strategy",
+      description: "Understanding user needs and business goals to decide what to build and why.",
+      features: ["User Research", "Stakeholder Alignment", "Prioritization"],
       gradient: "from-pink-200 via-red-100 to-yellow-100",
       darkGradient: "from-pink-900/30 via-red-900/30 to-yellow-900/30"
     },
     {
       icon: <BsCodeSlash className="text-3xl text-brown dark:text-brown-light" />,
-      title: "Development",
-      description: "Custom-built sites for optimal performance & scalability.",
-      features: ["Code", "Content Management", "SEO Ready"],
+      title: "Design",
+      description: "Turning ideas into Custom-built testable experiences before a single line of code.",
+      features: ["User Journeys", "Design Systems", "Clickable Prototypes"],
       gradient: "from-yellow-100 via-green-100 to-blue-100",
       darkGradient: "from-yellow-900/30 via-green-900/30 to-blue-900/30"
     },
     {
       icon: <BsGearFill className="text-4xl text-brown dark:text-brown-light" />,
-      title: "Maintenance",
-      description: "Proactive site updates, speed, and security automated.",
-      features: ["Speed Optimization", "Automation", "Analytics"],
+      title: "Delivery & Launch",
+      description: "Bridging design and development from spec to ship ",
+      features: ["Feature Specs", "User Acceptance Testing", "Analytics setup"],
       gradient: "from-blue-100 via-purple-100 to-pink-100",
       darkGradient: "from-blue-900/30 via-purple-900/30 to-pink-900/30"
     }

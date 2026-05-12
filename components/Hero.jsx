@@ -8,7 +8,7 @@ const Hero = () => {
   const [typedText, setTypedText] = useState("");
   const [index, setIndex] = useState(0);
   const canvasRef = useRef(null);
-  const text = "Web Solutions Consultant & Developer";
+  const text = "Product Designer & Consulant";
 
   // Typing animation effect
   useEffect(() => {
