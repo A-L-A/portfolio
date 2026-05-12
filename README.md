@@ -9,7 +9,7 @@ Welcome to my personal portfolio website repository. This site showcases my work
 - Interactive UI: Smooth animations and transitions for engaging user experience
 - Project Showcase: Gallery of my recent design and development work
 - Contact Form: Integrated with EmailJS for direct communication
-- Performance Optimized: Fast loading times and efficient code structure
+
 
 ## 🛠️ Built With
 
