@@ -1,10 +1,6 @@
 # Lyse A. Aneze - Portfolio Website
 
-Welcome to my personal portfolio website repository. This site showcases my work as a web designer and developer with a clean, modern aesthetic and responsive design.
-
-## 🚀 Live Site
-
-Visit my portfolio at [https://anezelyse.com]
+Welcome to my personal portfolio website repository. This site showcases my work as a product designer and builder  with a clean, modern aesthetic and responsive design.
 
 ## ✨ Features
 
